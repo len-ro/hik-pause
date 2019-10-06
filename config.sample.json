@@ -1,0 +1,28 @@
+[
+    {
+        "name": "home",
+        "cameras": {
+            "frontdoor": "10.0.0.101",
+            "reardoor": "10.0.0.101"
+        },
+        "user": "admin",
+        "pass": "falsehomepass"
+    },
+    {
+        "name": "office",
+        "cameras": {
+            "lobby": "10.80.0.203",
+            "office": "10.80.0.210"
+        },
+        "user": "admin",
+        "pass": "falseofficepass"
+    },
+    {
+        "name": "storage",
+        "cameras": {
+            "box": "192.168.17.13"
+        },
+        "user": "admin",
+        "pass": "falsestoragepass"
+    }
+]
