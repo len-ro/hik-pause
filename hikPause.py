@@ -9,7 +9,8 @@ import re
 
 class HikPause:
     def __init__(self):
-        self.config = json.load(open('config.json', 'r'))
+        self.script_path = os.path.dirname(os.path.realpath(__file__))
+        self.config = json.load(open(os.path.join(self.script_path, 'config.json'), 'r'))
         self.detections = {
             'intrusion': 'Smart/FieldDetection/1',
             'line': 'Smart/LineDetection/1',
@@ -49,8 +50,7 @@ class HikPause:
                             print('Camera %s is not reacheable' % camera)
 
     def pause_camera(self, pause, location, name, ip):
-        script_path = os.path.dirname(os.path.realpath(sys.argv[0]))
-        config_path = os.path.join(script_path, 'cameras', location['name'], ip)
+        config_path = os.path.join(self.script_path, 'cameras', location['name'], ip)
 
         if pause:
             if not os.path.exists(config_path):
